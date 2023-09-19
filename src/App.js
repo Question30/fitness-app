@@ -4,10 +4,11 @@ import AuthPage from "./pages/AuthPage";
 import {Routes, Route} from 'react-router-dom';
 import Nav from './components/Nav';
 import { getUser } from "./utilities/users-service";
-import WorkoutPage from './pages/WorkoutPage';
+import WorkoutsPage from './pages/WorkoutsPage';
 import WorkoutHistoryPage from './pages/WorkoutHistoryPage';
 import AddExercisePage from "./pages/AddExercisePage";
 import NewWorkoutPage from './pages/NewWorkoutPage';
+import WorkoutPage from "./pages/WorkoutPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -19,10 +20,11 @@ function App() {
     <>
     <Nav user={user} setUser={setUser} />
     <Routes>
-      <Route path='/workout'  element={<WorkoutPage />}/>
+      <Route path='/workout'  element={<WorkoutsPage />}/>
       <Route path='/workout/history' element={<WorkoutHistoryPage />}/>
       <Route path='/workout/new' element={<NewWorkoutPage />} />
-      <Route path='/Workout/add-exercise' element={<AddExercisePage/>} />
+      <Route path='/workout/:id' element={<WorkoutPage />} />
+      <Route path='/workout/add-exercise/:id' element={<AddExercisePage/>} />
     </Routes> 
     </>)
     : 

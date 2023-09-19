@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const setSchema = new mongoose.Schema({
-    set: {type: Number, default: 0},
+    set: {type: Number, default: 1},
     weight: {type: Number, default: 0},
     reps: {type: Number, default: 0},
 })

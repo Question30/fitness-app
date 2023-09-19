@@ -1,15 +1,14 @@
 
 
 export default function Exercise({exercise, addExerciseToState}){
-
-    function handleOnClick(e){
+    function handleClick(){
         addExerciseToState(exercise);
     }
 
     return(
         <div>
             <p>{exercise.name}</p>
-            <button onClick={handleOnClick}>Add</button>
+            <button onClick={handleClick}>Add</button>
         </div>
     )
 }

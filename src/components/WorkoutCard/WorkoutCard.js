@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
-
-export default function WorkoutCard(){
+export default function WorkoutCard({workout}){
     return(
         <div>
-            <h1>Workout Card</h1>
+            <Link to={`/workout/${workout._id}`}>{workout.name}</Link>
+            <h2>{workout.day}</h2>
         </div>
     )
 }

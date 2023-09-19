@@ -18,10 +18,14 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(require('./config/checkToken'));
+app.use(
+    express.urlencoded({ extended: true })
+);
 
 //API routes here
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/exercise', require('./routes/api/exercise'));
+app.use('/api/workout', require('./routes/api/workout'));
 
 //catch all route
 //returns index.html for all routes that aren't api routes
