@@ -23,7 +23,7 @@ function App() {
       <Route path='/workout'  element={<WorkoutsPage />}/>
       <Route path='/workout/history' element={<WorkoutHistoryPage />}/>
       <Route path='/workout/new' element={<NewWorkoutPage />} />
-      <Route path='/workout/:id' element={<WorkoutPage />} />
+      <Route path='/workout/:id' element={<WorkoutPage user={user} />} />
       <Route path='/workout/add-exercise/:id' element={<AddExercisePage/>} />
     </Routes> 
     </>)

@@ -21,3 +21,9 @@ export function addExercises(exercises, id){
 export function addSets(id){
     return sendRequest(`${BASE_URL}/add-sets/${id}`, 'PUT');
 }
+
+export function updateWorkout(id, workout, user){
+    const updatedUser =  user;
+    updatedUser.workouts = workout;
+return sendRequest(`${BASE_URL}/update/${id}`, 'PUT', updatedUser);
+}

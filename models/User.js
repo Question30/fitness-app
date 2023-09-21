@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const Workout = require('./Workout').schema;
 
 // Salt rounds
 const SALT_ROUNDS = 6;
@@ -18,7 +19,8 @@ const userSchema = new mongoose.Schema({
       trim: true,
       minLength: 3,
       required: true
-    }
+    },
+    workouts: [Workout]
 }, {timestamps: true,
     toJSON: {
         transform: function(doc, ret) {
