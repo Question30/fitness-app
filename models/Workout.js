@@ -6,7 +6,7 @@ const workoutSchema = new mongoose.Schema({
     day: {type: String, enum: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']},
     exercises: [Exercise],
     isFinished: {type: Boolean, default: false}
-});
+}, {timestamps: true});
 
 workoutSchema.methods.setExercises = async function(exercise){
     const workout = this;

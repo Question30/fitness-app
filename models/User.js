@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
       minLength: 3,
       required: true
     },
-    workouts: [Workout]
+    workouts: [Workout],
+    isAdmin: {type: Boolean, default: false}
 }, {timestamps: true,
     toJSON: {
         transform: function(doc, ret) {

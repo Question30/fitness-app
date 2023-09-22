@@ -13,6 +13,18 @@ export function signUp(userData) {
   export function checkToken(){
     return sendRequest(`${BASE_URL}/check-token`);
   }
+
+  export function getWorkoutHistory(id){
+    return sendRequest(`${BASE_URL}/workout-history/${id}`)
+  }
+
+  export function getAllUsers(){
+    return sendRequest(`${BASE_URL}/admin`);
+  }
+
+  export function deleteUser(id){
+    return sendRequest(`${BASE_URL}/admin`, 'DELETE', id)
+  }
   
   /*--- Helper Functions ---*/
   

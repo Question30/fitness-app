@@ -26,6 +26,18 @@ export async function checkToken(){
   return new Date(dateStr);
 }
 
+export async function getWorkoutHistory(id){
+ return await usersAPI.getWorkoutHistory(id);
+}
+
+export async function getAllUsers(){
+  return await usersAPI.getAllUsers();
+}
+
+export async function deleteUser(id){
+  return await usersAPI.deleteUser(id);
+}
+
 
 export function getToken() {
   // getItem returns null if there's no string

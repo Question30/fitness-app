@@ -4,21 +4,22 @@ const workoutCtrl = require('../../controllers/api/workout');
 
 const router = express.Router();
 
-//GET
-router.get('/', ensureLoggedin, workoutCtrl.getAllWorkouts)
+//GET/Read
+router.get('/', ensureLoggedin, workoutCtrl.getAllWorkouts);
 
 
-//Post
+//Post/Create
 router.post('/new', ensureLoggedin, workoutCtrl.createWorkout);
 
-//Update
+//Put/Update
 router.put('/add-exercise/:id', ensureLoggedin, workoutCtrl.addExercises);
 
-router.put('/add-sets/:id', ensureLoggedin, workoutCtrl.addSets);
+router.put('/update/:id', ensureLoggedin, workoutCtrl.updateWorkout);
 
-router.put('/update/:id', ensureLoggedin, workoutCtrl.updateWorkout)
+//Delete
+router.delete('/:id', ensureLoggedin, workoutCtrl.deleteWorkout);
 
-//Show
+//Show/Read
 router.get('/:id', ensureLoggedin, workoutCtrl.getWorkoutByID);
 
 module.exports = router;
