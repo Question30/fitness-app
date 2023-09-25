@@ -15,7 +15,7 @@ function App() {
   const [user, setUser] = useState(getUser());
 
   return( 
-  <main className="App">
+  <main className="bg-cyan-700 min-h-screen ">
     {user ? 
     (
       user.isAdmin ?
@@ -25,7 +25,7 @@ function App() {
     <Nav user={user} setUser={setUser} />
     <Routes>
       <Route path='/workout'  element={<WorkoutsPage />}/>
-      <Route path='/workout/history' element={<WorkoutHistoryPage  user={user}/>}/>
+      <Route path='/' element={<WorkoutHistoryPage  user={user}/>}/>
       <Route path='/workout/new' element={<NewWorkoutPage />} />
       <Route path='/workout/:id' element={<WorkoutPage user={user} />} />
       <Route path='/workout/add-exercise/:id' element={<AddExercisePage/>} />

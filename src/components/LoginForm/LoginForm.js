@@ -28,14 +28,14 @@ async function handleSubmit(evt) {
 }
 
 return (
-  <div>
-    <div className="form-container" onSubmit={handleSubmit}>
-      <form autoComplete="off" >
-        <label>Email</label>
+  <div className="border my-5 w-3/4 mx-auto">
+    <div className="">
+      <form className='flex flex-col text-center pt-5 content-center w-1/2 mx-auto' autoComplete="off" onSubmit={handleSubmit}>
+        <label className='text-xl py-2 underline font-bold text-orange-100'>Email:</label>
         <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-        <label>Password</label>
+        <label className='text-xl py-2 underline font-bold text-orange-100'>Password:</label>
         <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-        <button type="submit">LOG IN</button>
+        <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50' type="submit">LOG IN</button>
       </form>
     </div>
     <p className="error-message">&nbsp;{error}</p>

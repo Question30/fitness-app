@@ -10,9 +10,9 @@ export default function Nav({user, setUser}){
     }
 
     return(
-        <nav>
-            <h2>Welcome, {user.name}</h2>
-           <Link to="/workout/history">Workout History</Link>
+        <nav className='bg-emerald-500 pt-2 text-center text-slate-100 text-xl'>
+            <h2 className='text-2xl mb-1'>Welcome, {user.name}</h2>
+           <Link to="/">Workout History</Link>
            &nbsp; | &nbsp;
            <Link to='/workout'>Workout</Link>
            &nbsp; | &nbsp;

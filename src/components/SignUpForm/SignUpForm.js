@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { signUp } from "../../utilities/users-service";
 
-// SignUpForm.jsx <--> users-service.js <--> users-api.js 
+// SignUpForm.jsx <--> users-service.js <--> users-api.js
 // <-Internet-> routes/users.js <--> controller/users.js
 
-export default function SignUpForm({setUser}) {
+export default function SignUpForm({ setUser }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,11 +30,10 @@ export default function SignUpForm({setUser}) {
       //remove unused data
       delete userFormData.confirm;
       delete userFormData.error;
-        
+
       //calling user service signUp function
       const user = await signUp(userFormData);
       setUser(user);
-
     } catch (error) {
       console.log(error);
       setFormData({
@@ -46,9 +45,9 @@ export default function SignUpForm({setUser}) {
 
   return (
     <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Name</label>
+      <div className="border my-5 w-3/4 mx-auto">
+        <form className="flex flex-col text-center pt-5 content-center w-1/2 mx-auto" autoComplete="off" onSubmit={handleSubmit}>
+          <label className="text-xl py-2 underline font-bold text-orange-100">Name:</label>
           <input
             type="text"
             name="name"
@@ -56,7 +55,7 @@ export default function SignUpForm({setUser}) {
             onChange={handleChange}
             required
           />
-          <label>Email</label>
+          <label className="text-xl py-2 underline font-bold text-orange-100">Email:</label>
           <input
             type="email"
             name="email"
@@ -64,7 +63,7 @@ export default function SignUpForm({setUser}) {
             onChange={handleChange}
             required
           />
-          <label>Password</label>
+          <label className="text-xl py-2 underline font-bold text-orange-100">Password:</label>
           <input
             type="password"
             name="password"
@@ -72,7 +71,7 @@ export default function SignUpForm({setUser}) {
             onChange={handleChange}
             required
           />
-          <label>Confirm Password</label>
+          <label className="text-xl py-2 underline font-bold text-orange-100">Confirm Password:</label>
           <input
             type="password"
             name="confirm"
@@ -81,7 +80,7 @@ export default function SignUpForm({setUser}) {
             required
           />
 
-          <button type="submit" disabled={disable}>
+          <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50' type="submit" disabled={disable}>
             Sign Up
           </button>
         </form>
