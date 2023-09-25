@@ -15,7 +15,8 @@ export function signUp(userData) {
   }
 
   export function getWorkoutHistory(id){
-    return sendRequest(`${BASE_URL}/workout-history/${id}`)
+    console.log(id);
+    return sendRequest(`${BASE_URL}/history/${id}`)
   }
 
   export function getAllUsers(){
@@ -23,7 +24,7 @@ export function signUp(userData) {
   }
 
   export function deleteUser(id){
-    return sendRequest(`${BASE_URL}/admin`, 'DELETE', id)
+    return sendRequest(`${BASE_URL}/admin/${id}`, 'DELETE')
   }
   
   /*--- Helper Functions ---*/

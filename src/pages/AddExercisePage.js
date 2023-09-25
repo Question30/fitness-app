@@ -30,9 +30,9 @@ export default function AddExercisePage() {
   }
 
   return (
-    <main>
-      <h1>add exercise page</h1>
-      <button onClick={handleOnClick}>Done</button>
+    <main className="text-center text-orange-100" >
+      <h1 className="text-3xl my-4">Add exercises to workout</h1>
+      <button className="border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50 w-1/4" onClick={handleOnClick}>Done</button>
       {exerciseList ? (
         exerciseList.map((exercise) => {
           return (

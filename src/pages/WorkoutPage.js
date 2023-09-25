@@ -23,6 +23,7 @@ export default function WorkoutPage({user}) {
   function handleFinishWorkout(){
     const copyOfWorkout = {...workout};
     copyOfWorkout.isFinished = true;
+    console.log(copyOfWorkout);
     workoutAPI.updateWorkout(id, copyOfWorkout, user);
     navigate('/workout')
   }
@@ -38,25 +39,27 @@ export default function WorkoutPage({user}) {
   console.log(workout);
 
   return (
-    <main>
-      <h1>{workout.name}</h1>
-      <h2>{workout.day}</h2>
+    <main className="text-center my-4 text-orange-100">
+      <h1 className="text-3xl underline font-bold my-2">{workout.name}</h1>
+      <h2 className="text-xl my-2">{workout.day}</h2>
+      <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50 w-1/4' onClick={ handleFinishWorkout}>Finish Workout</button>
       {exercises ? (
         exercises.map((exercise) => {
             console.log(exercise.sets);
           return (
             <>
            <ExerciseSets workout={workout}  exercise={exercise}/>
-           <button onClick={()=>removeExercise(exercise)}>Remove Exercise</button>
+           <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50' onClick={()=>removeExercise(exercise)}>Remove Exercise</button>
             </>
           );
         })
       ) : (
         <div>No Exercises</div>
       )}
-
+    <div className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50 w-1/4 mx-auto'>
       <Link to={`/workout/add-exercise/${id}`}>Add Exercises</Link>
-      <button onClick={ handleFinishWorkout}>Finish Workout</button>
+    </div>
+      
     </main>
   );
 }

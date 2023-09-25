@@ -11,6 +11,17 @@ async function getAllWorkouts(req, res){
     }
 }
 
+//Get all user Workout templates
+async function getAllUserWorkouts(req, res){
+    try{
+        const allWorkouts = await WorkOut.find({owner: req.body.email});
+        res.json(allWorkouts);
+
+    }catch (error){
+        res.status(400).json(error);
+    }
+}
+
 //GET workout by id/ Read
 async function getWorkoutByID(req, res){
     try{
@@ -74,5 +85,6 @@ module.exports ={
     getWorkoutByID,
     addExercises,
     updateWorkout,
-    deleteWorkout
+    deleteWorkout,
+    getAllUserWorkouts
 }

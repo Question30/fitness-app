@@ -9,24 +9,35 @@ import WorkoutHistoryPage from './pages/WorkoutHistoryPage';
 import AddExercisePage from "./pages/AddExercisePage";
 import NewWorkoutPage from './pages/NewWorkoutPage';
 import WorkoutPage from "./pages/WorkoutPage";
-import AdminPage from "./pages/AdminPage";
+import AdminPage from "./pages/Admin/AdminPage";
+import AdminNav from "./components/AdminNav";
+import AllWorkouts from "./pages/Admin/AllWorkouts";
+import AllExercises from "./pages/Admin/AllExercises";
 
 function App() {
   const [user, setUser] = useState(getUser());
 
   return( 
-  <main className="bg-cyan-700 min-h-screen ">
+  <main className="bg-cyan-700 min-h-screen pb-4">
     {user ? 
     (
       user.isAdmin ?
-      <AdminPage/>
+      <> 
+      <AdminNav/>
+      <Routes>
+        <Route path='/admin' element={<AdminPage/>}/>
+        <Route path='/workouts' element={<AllWorkouts/>}/>
+        <Route path='/exercises' element={<AllExercises/>}/>
+       
+      </Routes>
+      </>
       :
     <>
     <Nav user={user} setUser={setUser} />
     <Routes>
-      <Route path='/workout'  element={<WorkoutsPage />}/>
+      <Route path='/workout'  element={<WorkoutsPage user={user}/>}/>
       <Route path='/' element={<WorkoutHistoryPage  user={user}/>}/>
-      <Route path='/workout/new' element={<NewWorkoutPage />} />
+      <Route path='/workout/new' element={<NewWorkoutPage user={user} />} />
       <Route path='/workout/:id' element={<WorkoutPage user={user} />} />
       <Route path='/workout/add-exercise/:id' element={<AddExercisePage/>} />
     </Routes> 

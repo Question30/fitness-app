@@ -12,13 +12,13 @@ router.post('/login', userCtrl.login);
 //GET/Read
 router.get('/check-token', ensureLoggedin, userCtrl.checkToken);
 //Read
-router.get('/workout-history/:id', ensureLoggedin, userCtrl.getUserWorkouts);
+router.get('/history/:id', ensureLoggedin, userCtrl.getUserWorkouts);
 
 //Put/Update
 router.put('/update-user/:id', ensureLoggedin, userCtrl.updateUser)
 
 //Delete
-router.delete('/admin', ensureLoggedin, userCtrl.deleteUser)
+router.delete('/admin/:id', ensureLoggedin, userCtrl.deleteUser)
 
 //Get
 router.get('/admin', ensureLoggedin, userCtrl.getAllUsers);

@@ -6,3 +6,7 @@ export function getAllExercises(){
     return sendRequest(BASE_URL);
 };
 
+export function deleteExercise(id){
+    return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+

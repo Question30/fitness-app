@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import * as userServices from "../utilities/users-service";
 
 export default function WorkoutHistoryPage({ user }) {
-  console.log(user);
 
   const [workoutHistory, setWorkoutHistory] = useState([]);
 
@@ -14,11 +13,14 @@ export default function WorkoutHistoryPage({ user }) {
     getWorkoutHistory();
   }, []);
 
+  const copyOfWorkoutHistory = [...workoutHistory];
+  const lastFive = copyOfWorkoutHistory.reverse().slice(0,5);
+
   return (
     <main className="text-orange-100 text-center py-4">
       <h1 className="text-2xl underline font-bold">Workout History</h1>
-      {workoutHistory ? (
-        workoutHistory.map((workout) => {
+      {lastFive ? (
+        lastFive.map((workout) => {
           const date = workout.updatedAt;
           const updated = date.slice(0, 10);
           return (
@@ -37,9 +39,9 @@ export default function WorkoutHistoryPage({ user }) {
                     </div>
                   );
                 })
-              ) : (
-                <div>Can't find exercises</div>
-              )}
+              ) : <div>Can't find exercises</div>
+              
+              }
             </div>
           );
         })

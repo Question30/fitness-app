@@ -11,6 +11,8 @@ router.get('/', ensureLoggedin, workoutCtrl.getAllWorkouts);
 //Post/Create
 router.post('/new', ensureLoggedin, workoutCtrl.createWorkout);
 
+//Get user specific workouts
+router.post('/all', ensureLoggedin, workoutCtrl.getAllUserWorkouts);
 //Put/Update
 router.put('/add-exercise/:id', ensureLoggedin, workoutCtrl.addExercises);
 
@@ -21,5 +23,6 @@ router.delete('/:id', ensureLoggedin, workoutCtrl.deleteWorkout);
 
 //Show/Read
 router.get('/:id', ensureLoggedin, workoutCtrl.getWorkoutByID);
+
 
 module.exports = router;

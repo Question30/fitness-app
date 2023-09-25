@@ -20,11 +20,11 @@ export default function Set({setSetsToadd, setsToAdd}) {
   }
   console.log(set);
   return(
-    <>
+    <div>
     <div>Set:</div>
-    <label>Weight: <input type='number' name='weight' value={set.weight} onChange={handleChange} /></label>
-    <label>Reps: <input type='number' name='reps' value={set.reps} onChange={handleChange}/></label>
-    <input type='checkbox' onChange={finished}/>
-    </>
+    <label className="mx-2">Weight: <input className="text-stone-950" type='number' name='weight' value={set.weight} onChange={handleChange} /></label>
+    <label className="mx-2">Reps: <input className="text-stone-950" type='number' name='reps' value={set.reps} onChange={handleChange}/></label>
+    <label className="mx-2">Done</label><input type='checkbox' onChange={finished}/>
+    </div>
   )
 }

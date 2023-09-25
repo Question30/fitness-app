@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import * as workoutService from '../utilities/workout/workout-service';
+import * as workoutAPI from '../utilities/workout/workout-api'
 import { useNavigate } from 'react-router-dom';
 
-export default function NewWorkoutPage(){
+export default function NewWorkoutPage({user}){
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -22,16 +22,17 @@ export default function NewWorkoutPage(){
     function handleSubmit(e){
         e.preventDefault();
         const data = formData;
-        workoutService.createWorkout(data);
+        workoutAPI.createWorkout(data, user);
         navigate('/workout')
     }
 
     return(
         <main>
-            <form onSubmit={handleSubmit}>
-                <label>Name:</label>
-                <input type='text' name='name' value={formData.name} onChange={handleChange}/>
-                <label>Day:</label>
+            <div className='text-center my-4 text-3xl underlines'>New Workout Template</div>
+            <form className='text-center flex flex-col w-3/4 mx-auto my-4' onSubmit={handleSubmit}>
+                <label className='text-orange-100 underline text-xl'>Name:</label>
+                <input className='text-' type='text' name='name' value={formData.name} onChange={handleChange}/>
+                <label className='text-orange-100 underline text-xl'>Day:</label>
                 <select value={formData.day} onChange={handleChange} name='day'>
                     <option value=''>Select a day</option>
                     <option value='Mon' >Mon</option>
@@ -42,7 +43,7 @@ export default function NewWorkoutPage(){
                     <option value='Sat'>Sat</option>
                     <option value='Sun'>Sun</option>
                 </select>
-                <input type='submit' value='Add Workout'/>
+                <input className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50' type='submit' value='Add Workout'/>
             </form>
         </main>
     )

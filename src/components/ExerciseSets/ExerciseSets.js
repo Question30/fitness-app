@@ -20,14 +20,14 @@ function removeSet(){
 }
 
 function addSetToExercise(){
-    const copyOfSetsToAdd = [...setsToAdd];
-    copyOfSetsToAdd.shift();
-    exercise.sets.push(copyOfSetsToAdd);
+    const copyOfSets = setsToAdd;
+    copyOfSets.shift();
+    copyOfSets.map(set => exercise.sets.push(set));
 }
 
     return(
-        <div>
-        <div>{exercise.name}</div>
+        <div className="border w-3/4 mx-auto">
+        <div className="font-bold my-2">{exercise.name}</div>
         {
             numOfSets.length ? 
             numOfSets.map((set)=> {
@@ -38,9 +38,11 @@ function addSetToExercise(){
             :
             <div>No Sets</div>
         }
-        <button onClick={addSet}>Add Set</button>
-        <button onClick={removeSet}>Remove Set</button>
-        <button onClick={addSetToExercise}>Finish Sets</button>
+        <div className="flex justify-evenly">
+        <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50 w-1/4' onClick={addSet}>Add Set</button>
+        <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50 w-1/4' onClick={removeSet}>Remove Set</button>
+        <button className='border my-4 rounded text-xl bg-emerald-500 font-bold text-slate-50 w-1/4' onClick={addSetToExercise}>Finish Sets</button>
+        </div>
       </div>
     )
 }
