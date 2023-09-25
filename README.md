@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+<br/>
+<p align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">Fitness Tracker</h3>
 
-## Available Scripts
+  <p align="center">
+    A fitness Tracker, to help you reach you goals
+    <br/>
+    <br/>
+    <a href="https://github.com/Question30/fitness-app"><strong>Check out the repo »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://fitness-tracker-87za.onrender.com/">View Demo</a>
+    .
+    <a href="https://github.com/Question30/fitness-app/issues">Report Bug</a>
+    .
+    <a href="https://github.com/Question30/fitness-app/issues">Request Feature</a>
+  </p>
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
+## Table Of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Authors](#authors)
+* [Acknowledgements](#acknowledgements)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+![Screen Shot](https://i.imgur.com/aOpu7z5.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Created a fitness tracker for PerScholas final project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React.js
+- Node.js
+- Expers.js
+- MongoDB
+- Mongoose
+- Tailwind Css
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Sign up
+- Go to workout tab add new workout template
+- add exercises
+- record wieghts and repetitions
+- finish workout
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Planned Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### User Profile Page
+- edit username
+- change Password
+- check your progress data
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Progress Data
+- use Chart.js to add charts
+- showing progress 
 
-## Learn More
+### Linear Progression Algorithm
+- Have workouts auto update to recommend increase in weight or repetition based on previous workout.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Filter for exercises
+- Add a filter to the add exercises page to make finding exercises easier
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Current Bugs
+- having too many workouts under 1 user crashes the app
+- To fix this I will move finished workouts to their own collection
 
-### Code Splitting
+## Other Links
+[Link to Trello board](https://trello.com/b/wKDkEXw8/fitnesstracker-project)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Link to wireframe](https://app.diagrams.net/#G1a19ZusG-kH5fPsVleJm-n3XEjDyW5U-f)
