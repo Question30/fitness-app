@@ -23,15 +23,8 @@
 
 * [About the Project](#about-the-project)
 * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [License](#license)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+* [Features](#features)
+* [Planned Features](#planned features)
 
 ## About The Project
 
@@ -50,13 +43,13 @@ Created a fitness tracker for PerScholas final project.
 - Mongoose
 - Tailwind Css
 
-## Usage
+## Features
 
-- Sign up
-- Go to workout tab add new workout template
-- add exercises
-- record wieghts and repetitions
-- finish workout
+- Sign up new users
+- create workout templates
+- add exercises to templates
+- add sets to exercises
+- view workout history
 
 ## Planned Features
 
