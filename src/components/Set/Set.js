@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Set({setSetsToadd, setsToAdd}) {
+export default function Set({setSetsToadd, setsToAdd, exercise}) {
 
   const [set, setSet] = useState({
     weight: 1,
@@ -13,9 +13,11 @@ export default function Set({setSetsToadd, setsToAdd}) {
   
   function finished(e){
     if(e.target.checked === true){
-     setSetsToadd([...setsToAdd, set])
+     exercise.sets.push(set);
+     console.log(exercise);
+     
     }else{
-      return
+      exercise.sets.pop() 
     }
   }
   console.log(set);

@@ -23,8 +23,8 @@ export default function WorkoutPage({user}) {
   function handleFinishWorkout(){
     const copyOfWorkout = {...workout};
     copyOfWorkout.isFinished = true;
-    console.log(copyOfWorkout);
-    workoutAPI.updateWorkout(id, copyOfWorkout, user);
+    // console.log(copyOfWorkout);
+    workoutAPI.finishWorkout(copyOfWorkout);
     navigate('/workout')
   }
 

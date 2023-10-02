@@ -14,11 +14,22 @@ async function getAllWorkouts(req, res){
 //Get all user Workout templates
 async function getAllUserWorkouts(req, res){
     try{
-        const allWorkouts = await WorkOut.find({owner: req.body.email});
+        const allWorkouts = await WorkOut.find({owner: req.body.email, isFinished: false});
         res.json(allWorkouts);
 
     }catch (error){
         res.status(400).json(error);
+    }
+}
+
+//Workout history
+async function getHistory(req, res){
+    try {
+        console.log(req.body);
+      const history = await WorkOut.find({owner: req.body.email, isFinished: true})  ;
+      res.json(history)
+    } catch (error) {
+        res.status(400).json(error)
     }
 }
 
@@ -39,6 +50,17 @@ async function createWorkout(req, res){
         res.json(createdWorkout);
     }catch(error){
         res.status(400).json(error);
+    }
+}
+
+//Finish Workout
+async function finishWorkout(req, res){
+    try {
+        console.log(req.body);
+        // const finishedWorkout = await WorkOut.create(req.body);
+        // res.json(finishWorkout)
+    } catch (error) {
+        res.status(400).json(error)
     }
 }
 
@@ -86,5 +108,7 @@ module.exports ={
     addExercises,
     updateWorkout,
     deleteWorkout,
-    getAllUserWorkouts
+    getAllUserWorkouts,
+    finishWorkout,
+    getHistory
 }

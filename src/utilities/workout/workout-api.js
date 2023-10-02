@@ -34,6 +34,17 @@ export function updateWorkout(id, workout, user){
 return sendRequest(`${BASE_URL}/update/${id}`, 'PUT', updatedUser);
 }
 
+export function finishWorkout(workout){
+    const copyOfWorkout = workout;
+    delete copyOfWorkout._id;
+    console.log(copyOfWorkout);
+    return sendRequest(`${BASE_URL}/finish-workout`, 'POST', copyOfWorkout);
+}
+
+export function getWorkoutHistory(user){
+    return sendRequest(`${BASE_URL}/history`, 'POST', user);
+}
+
 export function deleteWorkout(id){
     return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }

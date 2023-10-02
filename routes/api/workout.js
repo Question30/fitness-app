@@ -24,5 +24,10 @@ router.delete('/:id', ensureLoggedin, workoutCtrl.deleteWorkout);
 //Show/Read
 router.get('/:id', ensureLoggedin, workoutCtrl.getWorkoutByID);
 
+//Finished Workout
+router.post('/finish-workout', ensureLoggedin, workoutCtrl.finishWorkout)
+
+//Workout History
+router.post('/history', ensureLoggedin, workoutCtrl.getHistory)
 
 module.exports = router;

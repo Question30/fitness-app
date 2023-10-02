@@ -9,7 +9,6 @@ export default function WorkoutsPage({ user }) {
   useEffect(function () {
     async function getAllWorkouts() {
       const allWorkouts = await workoutAPI.getAllUserWorkouts(user);
-      console.log(allWorkouts);
       setWorkouts(allWorkouts);
     }
     getAllWorkouts();

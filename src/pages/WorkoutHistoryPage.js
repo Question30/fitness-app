@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import * as userServices from "../utilities/users-service";
+import * as workoutAPI from '../utilities/workout/workout-api'
 
 export default function WorkoutHistoryPage({ user }) {
 
@@ -7,20 +7,18 @@ export default function WorkoutHistoryPage({ user }) {
 
   useEffect(function () {
     async function getWorkoutHistory() {
-      const history = await userServices.getWorkoutHistory(user._id);
+      const history = await workoutAPI.getWorkoutHistory(user)
       setWorkoutHistory(history);
     }
     getWorkoutHistory();
   }, []);
 
-  const copyOfWorkoutHistory = [...workoutHistory];
-  const lastFive = copyOfWorkoutHistory.reverse().slice(0,5);
 
   return (
     <main className="text-orange-100 text-center py-4">
       <h1 className="text-2xl underline font-bold">Workout History</h1>
-      {lastFive ? (
-        lastFive.map((workout) => {
+      {workoutHistory ? (
+        workoutHistory.map((workout) => {
           const date = workout.updatedAt;
           const updated = date.slice(0, 10);
           return (
