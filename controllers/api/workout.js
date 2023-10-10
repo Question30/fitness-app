@@ -57,8 +57,8 @@ async function createWorkout(req, res){
 async function finishWorkout(req, res){
     try {
         console.log(req.body);
-        // const finishedWorkout = await WorkOut.create(req.body);
-        // res.json(finishWorkout)
+        const finishedWorkout = await WorkOut.create(req.body);
+        res.json(finishedWorkout)
     } catch (error) {
         res.status(400).json(error)
     }

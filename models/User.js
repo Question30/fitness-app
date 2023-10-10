@@ -21,7 +21,8 @@ const userSchema = new mongoose.Schema({
       required: true
     },
     workouts: [Workout],
-    isAdmin: {type: Boolean, default: false}
+    isAdmin: {type: Boolean, default: false},
+    isTrainer: {type: Boolean, default: false},
 }, {timestamps: true,
     toJSON: {
         transform: function(doc, ret) {
