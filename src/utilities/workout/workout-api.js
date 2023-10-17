@@ -37,6 +37,8 @@ return sendRequest(`${BASE_URL}/update/${id}`, 'PUT', updatedUser);
 export function finishWorkout(workout){
     const copyOfWorkout = workout;
     delete copyOfWorkout._id;
+    delete copyOfWorkout.updatedAt;
+    delete copyOfWorkout.createdAt;
     console.log(copyOfWorkout);
     return sendRequest(`${BASE_URL}/finish-workout`, 'POST', copyOfWorkout);
 }

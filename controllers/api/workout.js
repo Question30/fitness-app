@@ -86,27 +86,26 @@ async function deleteWorkout(req, res){
     }
 }
 
-//ADD workouts to user/ update
-async function updateWorkout(req, res){
-    try {
-       const user = await User.findById(req.body._id);
-        const updatedWorkouts = [...user.workouts, req.body.workouts];
-        console.log(updatedWorkouts);
+// //ADD workouts to user/ update
+// async function updateWorkout(req, res){
+//     try {
+//        const user = await User.findById(req.body._id);
+//         const updatedWorkouts = [...user.workouts, req.body.workouts];
+//         console.log(updatedWorkouts);
 
-        await User.findByIdAndUpdate(req.body._id, {workouts: updatedWorkouts})
-      res.status(200).json(user);
+//         await User.findByIdAndUpdate(req.body._id, {workouts: updatedWorkouts})
+//       res.status(200).json(user);
 
-    } catch (error) {
-        res.status(400).json({msg: error});
-    }
-}
+//     } catch (error) {
+//         res.status(400).json({msg: error});
+//     }
+// }
 
 module.exports ={
     createWorkout,
     getAllWorkouts,
     getWorkoutByID,
     addExercises,
-    updateWorkout,
     deleteWorkout,
     getAllUserWorkouts,
     finishWorkout,

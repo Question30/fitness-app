@@ -17,6 +17,8 @@ export default function Nav({user, setUser}){
            <Link to='/workout'>Workout</Link>
            &nbsp; | &nbsp;
            <Link to="" onClick={handleLogOut} >Log Out</Link>
+           &nbsp; | &nbsp;
+           <Link to="/data">Data</Link>
         </nav>
     )
 }

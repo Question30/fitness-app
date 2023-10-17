@@ -16,7 +16,7 @@ router.post('/all', ensureLoggedin, workoutCtrl.getAllUserWorkouts);
 //Put/Update
 router.put('/add-exercise/:id', ensureLoggedin, workoutCtrl.addExercises);
 
-router.put('/update/:id', ensureLoggedin, workoutCtrl.updateWorkout);
+// router.put('/update/:id', ensureLoggedin, workoutCtrl.updateWorkout);
 
 //Delete
 router.delete('/:id', ensureLoggedin, workoutCtrl.deleteWorkout);

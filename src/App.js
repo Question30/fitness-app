@@ -14,6 +14,7 @@ import AdminNav from "./components/AdminNav";
 import AllWorkouts from "./pages/Admin/AllWorkouts";
 import AllExercises from "./pages/Admin/AllExercises";
 import ProfilePage from "./pages/ProfilePage";
+import DataPage from "./pages/DataPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -36,6 +37,7 @@ function App() {
     <>
     <Nav user={user} setUser={setUser} />
     <Routes>
+      <Route path="/data" element={<DataPage user={user} />} />
       <Route path="/profile" element={<ProfilePage user={user}/>} />
       <Route path='/workout'  element={<WorkoutsPage user={user}/>}/>
       <Route path='/' element={<WorkoutHistoryPage  user={user}/>}/>
